@@ -294,8 +294,10 @@ if($headerS['header_topbar'] == true)
 </header>
 
 <?php 
+	//var_dump(get_post_type( $post->ID ));
+	$type = get_post_type( $post->ID );
 
-	if( is_single() || is_archive() || is_category() ):
+	if( (is_single() || is_archive() || is_category() ) && $type != 'event' ):
 		echo do_shortcode("[av_submenu which_menu='' menu='27' position='center' color='main_color' mobile='disabled' av_uid='av-jndlkffm']
 		[av_submenu_item title='Menu Item 1' link='' linktarget='no' button_style='']
 		[av_submenu_item title='Menu Item 2' link='' linktarget='no' button_style='']
